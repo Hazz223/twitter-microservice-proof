@@ -1,5 +1,6 @@
 package application.services;
 
+import application.domain.Weather;
 import application.domain.WeatherRepository;
 import application.web.dto.WeatherDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,10 @@ public class WeatherServiceImpl implements WeatherService {
     @Override
     public WeatherDto getCurrentWeather() {
 
-        return this.converter.convert(this.weatherRepository.findAll().get(0)); // todo: fix this!!!!
+        List<Weather> allByOrderByUpdateDateDesc = this.weatherRepository.findAllByOrderByUpdateDateDesc();
+
+//        return this.converter.convert(allByOrderByUpdateDateDesc.get(0));
+        return this.converter.convert(this.weatherRepository.findFirstByOrderByUpdateDateDesc());
     }
 
     @Override

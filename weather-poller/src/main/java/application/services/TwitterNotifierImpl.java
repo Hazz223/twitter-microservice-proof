@@ -6,6 +6,8 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
+import java.util.Date;
+
 /**
  * Created by Harry on 02/03/2016.
  */
@@ -19,8 +21,8 @@ public class TwitterNotifierImpl implements TwitterNotifier {
     public void tweetWeatherChange() throws TwitterException {
 
         Twitter twitter = TwitterFactory.getSingleton();
-        Status status = twitter.updateStatus("Test");
-        System.out.println("Successfully updated the status to [" + status.getText() + "].");
+        Status status = twitter.updateStatus("#wp_u - Weather has received update " + new Date());
+        System.out.println("Updated Twitter");
     }
 
     //endregion
