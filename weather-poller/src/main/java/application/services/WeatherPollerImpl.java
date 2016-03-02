@@ -26,7 +26,7 @@ public class WeatherPollerImpl implements WeatherPoller {
         this.twitterNotifier = twitterNotifier;
     }
 
-    @Scheduled(fixedDelay = 60000) // updates once a minute!
+    @Scheduled(fixedDelay = 120000) // updates once every 2 minutes
     @Override
     public void pollWeather() {
 

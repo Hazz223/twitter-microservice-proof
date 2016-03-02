@@ -29,16 +29,11 @@ repositories {
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-jdbc")
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-data-rest')
-    compile('org.springframework.boot:spring-boot-starter-mustache')
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile('org.springframework.security:spring-security-crypto:3.1.0.RELEASE')
-    compile('com.google.guava:guava:r05')
-    runtime('mysql:mysql-connector-java')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.twitter4j:twitter4j:4.0.4'
+    compile 'org.twitter4j:twitter4j-stream:4.0.4'
+    compile 'org.glassfish.jersey.core:jersey-client:2.22.1'
+    compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.22.1'
 }
 
 eclipse {
