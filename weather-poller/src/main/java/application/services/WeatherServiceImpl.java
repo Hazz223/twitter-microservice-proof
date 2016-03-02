@@ -29,9 +29,6 @@ public class WeatherServiceImpl implements WeatherService {
     @Override
     public WeatherDto getCurrentWeather() {
 
-        List<Weather> allByOrderByUpdateDateDesc = this.weatherRepository.findAllByOrderByUpdateDateDesc();
-
-//        return this.converter.convert(allByOrderByUpdateDateDesc.get(0));
         return this.converter.convert(this.weatherRepository.findFirstByOrderByUpdateDateDesc());
     }
 

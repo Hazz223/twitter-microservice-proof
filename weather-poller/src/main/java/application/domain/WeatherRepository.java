@@ -9,8 +9,6 @@ import java.util.List;
  */
 public interface WeatherRepository extends MongoRepository<Weather, String> {
 
-    List<Weather> findAllByOrderByUpdateDateDesc();
-
     Weather findFirstByOrderByUpdateDateDesc();
 
 }
